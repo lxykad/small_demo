@@ -1,5 +1,6 @@
 package com.lxy.small;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.widget.Toast;
 
 import net.wequick.small.Small;
 
-public class MainActivity extends AppCompatActivity {
+public class LaunchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +24,16 @@ public class MainActivity extends AppCompatActivity {
         btMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"main",Toast.LENGTH_SHORT).show();
-                Small.openUri("main", MainActivity.this);
+
+                Small.setUp(LaunchActivity.this, new Small.OnCompleteListener() {
+                    @Override
+                    public void onComplete() {
+                        Toast.makeText(LaunchActivity.this,"test",Toast.LENGTH_SHORT).show();
+                        Small.openUri("main", LaunchActivity.this);
+
+                    }
+                });
+
             }
         });
 

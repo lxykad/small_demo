@@ -16,8 +16,13 @@ public class BaseApplication extends Application {
 
         Small.preSetUp(this);
 
-        Small.setBaseUri("http://www.baidu.com/");// 浏览器跳转url
-        Small.setUp(this, null);
+        Small.setBaseUri("http://example.com/");// 浏览器跳转url
+//        Small.setUp(this, new Small.OnCompleteListener() {
+//            @Override
+//            public void onComplete() {
+//
+//            }
+//        });
 
     }
 }

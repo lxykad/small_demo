@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "bundles": [
+    {
+      "uri": "main",
+      "pkg": "com.lxy.small.app.main",
+      "rules": {
+        "test2": ".TestActivity"
+      }
+    }
+  ]
+}
